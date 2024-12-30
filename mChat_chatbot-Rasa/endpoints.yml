@@ -1,0 +1,15 @@
+
+action_endpoint:
+ url: http://action_server:5055/webhook
+
+# Tracker store which is used to store the conversations.
+# By default the conversations are stored in memory.
+# https://rasa.com/docs/rasa/tracker-stores
+
+tracker_store:
+   type: mongod
+   url: ${RASA_MONGODB_URI}
+   db: ${RASA_MONGODB_DB}
+   username: ${RASA_MONGODB_USERNAME}
+   password: ${RASA_MONGODB_PASSWORD}
+   auth_source: admin
